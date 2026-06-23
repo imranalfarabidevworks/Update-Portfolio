@@ -1,0 +1,17 @@
+{
+  "name": "Imran Al Farabi — Developer Portfolio",
+  "short_name": "Farabi",
+  "description": "Full Stack Developer, AI Engineer, and Product Builder.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08101c",
+  "theme_color": "#08101c",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

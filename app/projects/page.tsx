@@ -7,7 +7,7 @@ import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-// ১. এই ফাইলের ভেতরেই সরাসরি প্রজেক্টের ডেটা (কোনো এক্সটার্নাল ইম্পোর্ট ঝামেলা নেই)
+// ১. এখানে ১৫টি প্রজেক্টের অ্যারে তৈরি করে দেওয়া হলো
 const MY_PROJECTS = [
   {
     id: '1',
@@ -66,16 +66,183 @@ const MY_PROJECTS = [
     liveUrl: '#',
     githubUrl: '#'
   },
-  // আপনি চাইলে ঠিক এই নিচে কমা (,) দিয়ে ৪ থেকে ১০ নম্বর প্রজেক্টগুলো একইভাবে বসিয়ে দিতে পারেন
+  // ৪ থেকে ১৫ নম্বর প্রজেক্টগুলোর ডেমো স্ট্রাকচার নিচে যোগ করা হলো:
+  {
+    id: '4',
+    name: 'Project Four',
+    category: 'React',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ৪র্থ প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project4.jpg',
+    gradient: 'from-amber-600/20 to-transparent',
+    stack: ['React', 'Node.js', 'Tailwind'],
+    metrics: [{ value: 'MERN', label: 'STACK' }, { value: 'Axios', label: 'API' }, { value: 'JWT', label: 'AUTH' }, { value: '100%', label: 'STABLE' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '5',
+    name: 'Project Five',
+    category: 'Next.js',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ৫ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project5.jpg',
+    gradient: 'from-rose-600/20 to-transparent',
+    stack: ['Next.js', 'Prisma', 'Tailwind'],
+    metrics: [{ value: 'Next.js', label: 'STACK' }, { value: 'Postgres', label: 'DB' }, { value: 'Clerk', label: 'AUTH' }, { value: 'Edge', label: 'PROP' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '6',
+    name: 'Project Six',
+    category: 'Full-Stack',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ৬ষ্ঠ প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project6.jpg',
+    gradient: 'from-cyan-600/20 to-transparent',
+    stack: ['React', 'Express', 'MongoDB'],
+    metrics: [{ value: 'MERN', label: 'STACK' }, { value: 'Mongo', label: 'DB' }, { value: 'Firebase', label: 'AUTH' }, { value: '99%', label: 'SPEED' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '7',
+    name: 'Project Seven',
+    category: 'Frontend',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ৭ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project7.jpg',
+    gradient: 'from-fuchsia-600/20 to-transparent',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    metrics: [{ value: 'JS Native', label: 'STACK' }, { value: 'CSS3', label: 'UI' }, { value: 'DOM', label: 'LOGIC' }, { value: 'Responsive', label: 'LAYOUT' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '8',
+    name: 'Project Eight',
+    category: 'React',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ৮ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project8.jpg',
+    gradient: 'from-violet-600/20 to-transparent',
+    stack: ['React', 'Redux Toolkit', 'Sass'],
+    metrics: [{ value: 'React', label: 'STACK' }, { value: 'Redux', label: 'STATE' }, { value: 'Sass', label: 'STYLING' }, { value: 'Clean', label: 'CODE' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '9',
+    name: 'Project Nine',
+    category: 'Next.js',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ৯ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project9.jpg',
+    gradient: 'from-orange-600/20 to-transparent',
+    stack: ['Next.js', 'Sanity.io', 'Tailwind'],
+    metrics: [{ value: 'Next.js', label: 'STACK' }, { value: 'Sanity', label: 'CMS' }, { value: 'Dynamic', label: 'CONTENT' }, { value: 'SEO', label: 'READY' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '10',
+    name: 'Project Ten',
+    category: 'Mobile App',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ১০ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project10.jpg',
+    gradient: 'from-indigo-600/20 to-transparent',
+    stack: ['React Native', 'Expo', 'Firebase'],
+    metrics: [{ value: 'Native', label: 'STACK' }, { value: 'Firestore', label: 'DB' }, { value: 'Push', label: 'NOTIFY' }, { value: 'Android/iOS', label: 'OS' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '11',
+    name: 'Project Eleven',
+    category: 'Next.js',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ১১তম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project11.jpg',
+    gradient: 'from-pink-600/20 to-transparent',
+    stack: ['Next.js', 'Framer Motion'],
+    metrics: [{ value: 'Next.js', label: 'STACK' }, { value: 'Framer', label: 'ANIMATION' }, { value: 'Micro', label: 'INTERACTION' }, { value: '60 FPS', label: 'PERF' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '12',
+    name: 'Project Twelve',
+    category: 'React',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ১২তম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project12.jpg',
+    gradient: 'from-lime-600/20 to-transparent',
+    stack: ['React', 'Zustand', 'Shadcn UI'],
+    metrics: [{ value: 'React', label: 'STACK' }, { value: 'Zustand', label: 'STATE' }, { value: 'Shadcn', label: 'COMPONENTS' }, { value: 'Atomic', label: 'DESIGN' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '13',
+    name: 'Project Thirteen',
+    category: 'Backend',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ১৩তম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project13.jpg',
+    gradient: 'from-sky-600/20 to-transparent',
+    stack: ['Node.js', 'Express', 'PostgreSQL'],
+    metrics: [{ value: 'Node.js', label: 'STACK' }, { value: 'Postgres', label: 'DB' }, { value: 'REST', label: 'ARCH' }, { value: 'Docker', label: 'DEV' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '14',
+    name: 'Project Fourteen',
+    category: 'Next.js',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ১৪তম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project14.jpg',
+    gradient: 'from-teal-600/20 to-transparent',
+    stack: ['Next.js', 'GraphQL', 'Apollo'],
+    metrics: [{ value: 'Next.js', label: 'STACK' }, { value: 'GraphQL', label: 'API' }, { value: 'Apollo', label: 'CLIENT' }, { value: 'Type-Safe', label: 'DATA' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
+  {
+    id: '15',
+    name: 'Project Fifteen',
+    category: 'UI/UX Static',
+    year: '2025',
+    tagline: 'Short catchy tagline here',
+    description: 'এখানে আপনার ১৫তম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    image: '/images/project15.jpg',
+    gradient: 'from-yellow-600/20 to-transparent',
+    stack: ['Tailwind CSS', 'Alpine.js'],
+    metrics: [{ value: 'HTML5', label: 'CORE' }, { value: 'Tailwind', label: 'UTILITY' }, { value: 'Alpine', label: 'INTERACT' }, { value: 'Static', label: 'HOST' }],
+    liveUrl: '#',
+    githubUrl: '#'
+  }
 ];
 
-// এখানে export default ব্যবহার করা হয়েছে Next.js পেজ রাউটিং এর নিয়ম অনুযায়ী
-export default function AllProjectsPage() {
+export default function ProjectsPage() {
   return (
-    <main className="relative min-h-screen py-24 sm:py-32 bg-background text-foreground">
-      {/* Background Glow Designs */}
-      <div className="absolute inset-0 dot-pattern opacity-20" />
-      <div className="absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+    <main className="relative min-h-screen py-16 sm:py-24 md:py-32 bg-background text-foreground overflow-x-hidden">
+      {/* Background Shapes */}
+      <div className="absolute inset-0 dot-pattern opacity-15" />
+      <div className="absolute left-1/2 top-0 h-[300px] w-[300px] sm:h-[400px] sm:w-[600px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Back Home Link */}
@@ -87,31 +254,32 @@ export default function AllProjectsPage() {
           Back home
         </Link>
 
-        {/* Header Title Section */}
-        <div className="mt-8 mb-16">
-          <p className="font-mono text-xs uppercase tracking-widest text-primary">
+        {/* Responsive Header */}
+        <div className="mt-6 mb-12 sm:mt-8 sm:mb-16">
+          <p className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-primary">
             Archive · {MY_PROJECTS.length} Projects
           </p>
-          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             All Projects
           </h1>
-          <p className="mt-4 max-w-2xl text-muted-foreground text-sm">
-            আমার তৈরি করা প্রজেক্টগুলোর ডিটেইলস, লাইভ লিংক এবং কোড এখানে সিরিয়াল অনুযায়ী দেখতে পাবেন।
+          <p className="mt-3 max-w-2xl text-muted-foreground text-xs sm:text-sm leading-relaxed">
+            আমার তৈরি করা ১৫টি প্রজেক্টের লিস্ট এবং সোর্স কোড এখানে রেসপন্সিভ লেআউটে সাজানো রয়েছে।
           </p>
         </div>
 
-        {/* Grid System */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {/* 100% Responsive Grid Layout */}
+        {/* মোবাইল ডিভাইসে ১টি, ট্যাবলেটে ২টি এবং ডেক্সটপে ৩টি কলামে অটো-রিসাইজ হবে */}
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {MY_PROJECTS.map((project, i) => (
             <motion.article
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 backdrop-blur-sm flex flex-col justify-between h-full"
+              transition={{ duration: 0.4, delay: Math.min(i * 0.05, 0.3) }}
+              className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 backdrop-blur-sm flex flex-col justify-between h-full transition-all duration-300 hover:border-border/100"
             >
               <div>
-                {/* Project Image & Badges */}
+                {/* Aspect Ratio Responsive Image Section */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   {project.image && (
                     <img
@@ -124,49 +292,51 @@ export default function AllProjectsPage() {
                   <div className={`absolute inset-0 bg-gradient-to-t ${project.gradient}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
 
-                  <div className="absolute left-4 top-4 flex gap-2">
-                    <Badge variant="secondary" className="glass rounded-full text-[10px]">
+                  {/* Top Badges */}
+                  <div className="absolute left-3 top-3 sm:left-4 sm:top-4 flex gap-1.5">
+                    <Badge variant="secondary" className="glass rounded-full text-[9px] sm:text-[10px] px-2 py-0">
                       {project.category}
                     </Badge>
-                    <Badge variant="outline" className="glass rounded-full text-[10px]">
+                    <Badge variant="outline" className="glass rounded-full text-[9px] sm:text-[10px] px-2 py-0">
                       {project.year}
                     </Badge>
                   </div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="font-mono text-xs text-primary">{project.tagline}</p>
-                    <h3 className="mt-1 font-display text-xl font-bold tracking-tight">
+                  {/* Image Bottom Info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <p className="font-mono text-[10px] sm:text-xs text-primary">{project.tagline}</p>
+                    <h3 className="mt-0.5 font-display text-lg sm:text-xl font-bold tracking-tight">
                       {project.name}
                     </h3>
                   </div>
                 </div>
 
-                {/* Card Details Body */}
-                <div className="p-6">
-                  <p className="text-sm leading-relaxed text-muted-foreground line-clamp-2">
+                {/* Card Main content Body */}
+                <div className="p-4 sm:p-6">
+                  <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground line-clamp-2">
                     {project.description}
                   </p>
 
-                  {/* Tech Stack List */}
-                  <div className="mt-4 flex flex-wrap gap-1.5">
+                  {/* Tech Stack Responsive Badge List */}
+                  <div className="mt-3.5 flex flex-wrap gap-1.5">
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-md border border-border/50 bg-background/40 px-2 py-0.5 font-mono text-[10px] text-muted-foreground"
+                        className="rounded-md border border-border/50 bg-background/40 px-2 py-0.5 font-mono text-[9px] sm:text-[10px] text-muted-foreground"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  {/* Metrics Row */}
-                  <div className="mt-5 grid grid-cols-4 gap-2 border-t border-border/40 pt-5">
+                  {/* 4-Column Responsive Metrics Area */}
+                  <div className="mt-4 sm:mt-5 grid grid-cols-4 gap-1.5 border-t border-border/40 pt-4 sm:pt-5">
                     {project.metrics.map((metric) => (
-                      <div key={metric.label}>
-                        <div className="font-display text-[11px] font-bold text-primary truncate sm:text-xs">
+                      <div key={metric.label} className="min-w-0">
+                        <div className="font-display text-[10px] sm:text-xs font-bold text-primary truncate">
                           {metric.value}
                         </div>
-                        <div className="text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5">
+                        <div className="text-[8px] sm:text-[9px] uppercase tracking-wider text-muted-foreground mt-0.5 truncate">
                           {metric.label}
                         </div>
                       </div>
@@ -175,15 +345,15 @@ export default function AllProjectsPage() {
                 </div>
               </div>
 
-              {/* Action Buttons Inside Card */}
-              <div className="px-6 pb-6 mt-auto flex gap-2 pt-4 border-t border-border/20">
-                <Button size="sm" className="flex-1 rounded-xl text-xs h-9" asChild>
+              {/* Responsive Bottom Call-To-Action Buttons */}
+              <div className="px-4 pb-4 sm:px-6 sm:pb-6 mt-auto flex gap-2 pt-3 sm:pt-4 border-t border-border/20">
+                <Button size="sm" className="flex-1 rounded-xl text-xs h-9 h-8 sm:h-9" asChild>
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
                     Live Demo
                   </a>
                 </Button>
-                <Button size="sm" variant="outline" className="flex-1 rounded-xl text-xs h-9" asChild>
+                <Button size="sm" variant="outline" className="flex-1 rounded-xl text-xs h-8 sm:h-9" asChild>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-1.5 h-3.5 w-3.5" />
                     Code

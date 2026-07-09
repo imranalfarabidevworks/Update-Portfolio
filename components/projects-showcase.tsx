@@ -24,87 +24,87 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    id: 'ai-prescription',
-    name: 'AI Prescription & Health Analytics',
-    tagline: 'AI-powered clinical decision support',
+    id: 'glasshaven',
+    name: 'Glasshaven',
+    tagline: 'Premium real estate, reimagined',
     description:
-      'A healthcare platform that analyzes patient symptoms and suggests prescriptions using fine-tuned ML models, deployed across clinics.',
+      'A full-stack premium real estate platform enabling seamless property search, browsing, and secure purchase management.',
     longDescription:
-      'Built an end-to-end clinical decision support system. The platform ingests patient symptoms, lab results, and medical history, then runs them through fine-tuned transformer models to suggest diagnoses and prescriptions. Includes a real-time analytics dashboard for clinics to track outcomes, drug interactions, and patient follow-ups. Deployed to production serving multiple healthcare providers.',
-    category: 'AI / Healthcare',
-    year: '2024',
+      'Built a full-stack real estate platform where clients can browse premium estate listings and initiate property purchases securely. Paired the client-facing experience with an advanced Admin Dashboard featuring role-based access, allowing admins to efficiently manage, review, and confirm customer orders. Used TypeScript and Next.js for high-performance server-side rendering, backed by a secure MySQL database.',
+    category: 'Real Estate / Full-Stack',
+    year: '2025',
     image:
-      'https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600',
     gradient: 'from-cyan-500/30 via-blue-600/20 to-transparent',
     metrics: [
-      { label: 'Accuracy', value: '94.2%' },
-      { label: 'Patients', value: '12K+' },
-      { label: 'Clinics', value: '8' },
-      { label: 'Latency', value: '<200ms' },
+      { label: 'Stack', value: 'Next.js' },
+      { label: 'Database', value: 'MySQL' },
+      { label: 'Access', value: 'Role-Based' },
+      { label: 'Rendering', value: 'SSR' },
     ],
-    stack: ['Python', 'PyTorch', 'FastAPI', 'Next.js', 'PostgreSQL', 'Redis', 'AWS'],
+    stack: ['Next.js', 'TypeScript', 'MySQL', 'Tailwind CSS'],
     journey: [
-      'Researched medical NLP literature and assembled a labeled training dataset of 50K anonymized cases.',
-      'Fine-tuned a transformer model on domain-specific clinical text, reaching 94.2% prescription accuracy.',
-      'Built a real-time inference API with model caching for sub-200ms response times.',
-      'Designed an analytics dashboard for clinics to track outcomes and interventions over time.',
-      'Deployed with auto-scaling infrastructure handling 12K+ active patients across 8 clinics.',
+      'Designed property listing and search flows so clients can browse premium estates with rich filtering.',
+      'Built a secure purchase-initiation flow letting clients start property transactions directly from a listing.',
+      'Developed an advanced Admin Dashboard with role-based permissions to manage and review customer orders.',
+      'Implemented order confirmation workflows so admins can approve or reject purchase requests.',
+      'Used Next.js server-side rendering with TypeScript for fast page loads and a secure MySQL schema for data integrity.',
     ],
   },
   {
-    id: 'job-portal',
-    name: 'Modern Job Portal Ecosystem',
-    tagline: 'Connecting talent with opportunity',
+    id: 'freshmart',
+    name: 'FreshMart',
+    tagline: 'Modern e-commerce, made simple',
     description:
-      'A full-featured job platform with smart matching, video interviews, and applicant tracking — built for scale.',
+      'A fully featured e-commerce application built for smooth shopping experiences and secure transactions.',
     longDescription:
-      'Designed and engineered a complete job portal ecosystem. Features AI-powered candidate-role matching, real-time video interviews, a sophisticated applicant tracking system, and employer dashboards. Handles thousands of concurrent users with a microservice architecture and real-time notifications. Includes a recommendation engine that learns from application patterns.',
-    category: 'Platform / SaaS',
-    year: '2024',
+      'Built an end-to-end e-commerce platform covering interactive product listings, a dynamic shopping cart, and a streamlined checkout workflow. Integrated a secure payment gateway flow to handle client transactions and financial data safely, and implemented robust user authentication and session management using Better Auth alongside MongoDB.',
+    category: 'E-Commerce',
+    year: '2025',
     image:
-      'https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1600',
     gradient: 'from-emerald-500/30 via-teal-600/20 to-transparent',
     metrics: [
-      { label: 'Users', value: '45K+' },
-      { label: 'Jobs Listed', value: '8.2K' },
-      { label: 'Match Rate', value: '87%' },
-      { label: 'Uptime', value: '99.9%' },
+      { label: 'Stack', value: 'Next.js' },
+      { label: 'Database', value: 'MongoDB' },
+      { label: 'Auth', value: 'Better Auth' },
+      { label: 'Checkout', value: 'Streamlined' },
     ],
-    stack: ['Next.js', 'TypeScript', 'Node.js', 'Prisma', 'PostgreSQL', 'Redis', 'Docker'],
+    stack: ['Next.js', 'TypeScript', 'MongoDB', 'Better Auth', 'Tailwind CSS'],
     journey: [
-      'Architected a microservice-based system separating auth, matching, payments, and notifications.',
-      'Engineered an AI matching algorithm scoring candidate-job compatibility across 15 dimensions.',
-      'Integrated WebRTC for real-time video interviews with recording and transcription.',
-      'Built an event-driven notification pipeline handling email, SMS, and push delivery.',
-      'Scaled to 45K+ users with a 99.9% uptime SLA via Docker orchestration.',
+      'Built interactive product listing pages with dynamic filtering and a persistent shopping cart.',
+      'Designed a streamlined, multi-step checkout workflow to reduce friction at purchase time.',
+      'Integrated a secure payment gateway flow to handle client transactions and financial data.',
+      'Implemented user authentication and session management with Better Auth on top of MongoDB.',
+      'Structured MongoDB schemas for products, orders, and users to support fast, reliable queries.',
     ],
   },
   {
-    id: 'community-services',
-    name: 'Community Help & Local Services',
-    tagline: 'Unifying neighborhoods through technology',
+    id: 'launch-forge',
+    name: 'Launch-Forge',
+    tagline: 'Build your own web space in minutes',
     description:
-      'A hyperlocal platform connecting neighbors with verified service providers, requests, and community resources.',
+      'A web-building platform that lets authenticated users configure and deploy their own localized micro-websites.',
     longDescription:
-      'Created a community-first platform that bridges the gap between neighbors and local service providers. Features verified provider profiles, real-time service requests, a reputation system, community boards, and emergency response coordination. The platform handles location-based matching at scale and includes moderation tooling for community health.',
-    category: 'Community / Marketplace',
-    year: '2023',
+      'Created a web-building platform where authenticated users can sign up, manage their profile, and create a small personalized web space of their own. Built a custom content management layer for individuals to configure their site, powered by Supabase for real-time data tracking, cloud storage, and schema management. Designed an intuitive, responsive interface optimized for fluid layout changes and drag-and-drop mechanics.',
+    category: 'SaaS / Website Builder',
+    year: '2025',
     image:
-      'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1600',
     gradient: 'from-amber-500/30 via-orange-600/20 to-transparent',
     metrics: [
-      { label: 'Communities', value: '120+' },
-      { label: 'Providers', value: '3.5K' },
-      { label: 'Requests', value: '85K+' },
-      { label: 'Rating', value: '4.8/5' },
+      { label: 'Stack', value: 'Next.js' },
+      { label: 'Backend', value: 'Supabase' },
+      { label: 'Auth', value: 'Better Auth' },
+      { label: 'Editing', value: 'Drag & Drop' },
     ],
-    stack: ['React', 'React Native', 'GraphQL', 'PostgreSQL', 'Mapbox', 'WebSocket'],
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'Better Auth', 'Tailwind CSS'],
     journey: [
-      'Designed a location-first architecture using geospatial indexing for hyperlocal matching.',
-      'Built a verification pipeline for service providers with document and identity checks.',
-      'Implemented a real-time request system with WebSocket-based live updates.',
-      'Created a reputation system combining ratings, response times, and completion rates.',
-      'Onboarded 120+ communities with 3.5K verified providers handling 85K+ requests.',
+      'Built account sign-up and profile management so users can create their own personalized web space.',
+      'Developed a custom content management layout for configuring pages without touching code.',
+      'Used Supabase for real-time data tracking, cloud storage, and schema management.',
+      'Designed a responsive, intuitive interface optimized for fluid layout modifications.',
+      'Implemented drag-and-drop mechanics so users can rearrange their site sections visually.',
     ],
   },
 ];
@@ -358,7 +358,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
 
 
-// ... (Project type, PROJECTS array, ProjectCard, useBounds, ProjectModal — অপরিবর্তিত)
+
 
 export function ProjectsShowcase() {
   const [selected, setSelected] = React.useState<Project | null>(null);
@@ -405,7 +405,7 @@ export function ProjectsShowcase() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-16 flex justify-center"
         >
-          <Link href="/projects" className="group relative" data-cursor="pointer">
+          <Link href="./projects.tsx" className="group relative" data-cursor="pointer">
             <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-cyan-400 via-primary to-cyan-600 opacity-40 blur transition-opacity duration-500 group-hover:opacity-80" />
             <div className="relative flex items-center gap-3 overflow-hidden rounded-full border border-border/60 bg-card/60 px-8 py-4 backdrop-blur-sm transition-all duration-300 group-hover:border-primary/50 group-hover:bg-card/90">
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />

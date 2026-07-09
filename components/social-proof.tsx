@@ -228,7 +228,7 @@ export function SocialProof() {
                   Get in Touch
                 </a>
                 <a
-                  href="https://github.com/imranalfarabi"
+                  href="https://github.com/imranalfarabidevworks"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-border/60 bg-card/40 px-8 py-3 text-sm font-medium transition-colors hover:border-primary/40"

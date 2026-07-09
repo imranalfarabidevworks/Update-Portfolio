@@ -100,9 +100,9 @@ export function CommandMenuProvider({ children }: { children: React.ReactNode })
     { label: 'AI Prescription Platform', hint: 'Featured project', icon: FileText, action: () => scrollTo('#projects'), group: 'Projects' },
     { label: 'Job Portal Ecosystem', hint: 'Featured project', icon: Rocket, action: () => scrollTo('#projects'), group: 'Projects' },
     { label: 'Community Services Platform', hint: 'Featured project', icon: Cpu, action: () => scrollTo('#projects'), group: 'Projects' },
-    { label: 'View GitHub', icon: Github, action: () => openLink('https://github.com/imranalfarabi'), group: 'Connect' },
-    { label: 'LinkedIn', icon: Linkedin, action: () => openLink('https://linkedin.com/in/imranalfarabi'), group: 'Connect' },
-    { label: 'Send Email', icon: Mail, action: () => openLink('mailto:hello@imranalfarabi.com'), group: 'Connect' },
+    { label: 'View GitHub', icon: Github, action: () => openLink('https://github.com/imranalfarabidevworks'), group: 'Connect' },
+    { label: 'LinkedIn', icon: Linkedin, action: () => openLink('www.linkedin.com/in/imran-al-farabi-6868f'), group: 'Connect' },
+    { label: 'Send Email', icon: Mail, action: () => openLink('imranalfarabidevworks@gmail.com'), group: 'Connect' },
   ];
 
   return (

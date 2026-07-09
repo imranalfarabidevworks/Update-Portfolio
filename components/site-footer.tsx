@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { Github, Linkedin, Twitter, Mail, ArrowUpRight } from 'lucide-react';
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/imranalfarabi', icon: Github },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/imranalfarabi', icon: Linkedin },
-  { label: 'Twitter', href: 'https://twitter.com/imranalfarabi', icon: Twitter },
-  { label: 'Email', href: 'mailto:hello@imranalfarabi.com', icon: Mail },
+  { label: 'GitHub', href: 'https://github.com/imranalfarabidevworks', icon: Github },
+  { label: 'LinkedIn', href: 'www.linkedin.com/in/imran-al-farabi-6868f', icon: Linkedin },
+
+  { label: 'Email', href: 'imranalafarabidevworks@gmail.com', icon: Mail },
 ];
 
 const footerLinks = {
@@ -88,9 +88,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Imran Al Farabi. Crafted with
             precision.
           </p>
-          <p className="font-mono text-xs text-muted-foreground">
-            Built with Next.js, Three.js & Framer Motion
-          </p>
+         
         </div>
       </div>
     </footer>

@@ -23,7 +23,7 @@ const KNOWLEDGE_BASE: Record<
   },
   skills: {
     response:
-      "Imran's core technologies span across:\n\n• Frontend: TypeScript, React, Next.js, Three.js, Tailwind (5 years, 95% proficiency)\n• Backend: Node.js, FastAPI, PostgreSQL, Redis, GraphQL (5 years, 90%+)\n• AI/ML: Python, PyTorch, with 15+ deployed models\n• DevOps: Docker, AWS, CI/CD pipelines\n• Mobile: React Native\n\nYou can explore each technology in the interactive 3D skills galaxy below.",
+      "Imran's core technologies span across:\n\n• Frontend: TypeScript, React, Next.js, JavaScript, Tailwind (5 years, 95% proficiency)\n• Backend: Node.js,Express.js,Better Auth,JwT FastAPI, MySQL, MongoDB,  (2 years, 90%+)\n•",
     navigate: '#skills',
   },
   story: {
@@ -33,11 +33,11 @@ const KNOWLEDGE_BASE: Record<
   },
   contact: {
     response:
-      "You can reach Imran through:\n\n• Email: hello@imranalfarabi.com\n• LinkedIn: /in/imranalfarabi\n• GitHub: /imranalfarabi\n• Twitter: @imranalfarabi\n\nHe's currently available for new opportunities and collaborations.",
+      "You can reach Imran through:\n\n• Email:imranalfarabidevworks@gmail.com\n• LinkedIn:www.linkedin.com/in/imran-al-farabi-6868f\n• GitHub:https://github.com/imranalfarabidevworks\n•He's currently available for new opportunities and collaborations.",
   },
   experience: {
     response:
-      "Imran has 5+ years of professional experience with 40+ shipped projects and 15+ deployed AI models. His work spans healthcare (AI prescriptions), SaaS platforms (job portal ecosystem with 45K+ users), and community marketplaces (85K+ service requests). He's based in Dhaka, Bangladesh and works across time zones.",
+      "Imran has 3+ years of professional experience with 40+ shipped projects and 15+ deployed AI models. His work spans healthcare (AI prescriptions), SaaS platforms (job portal ecosystem with 45K+ users), and community marketplaces (85K+ service requests). He's based in Dhaka, Bangladesh and works across time zones.",
   },
   default: {
     response:

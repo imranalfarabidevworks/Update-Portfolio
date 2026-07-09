@@ -80,9 +80,7 @@ function StatBlock({ value, label }: { value: string; label: string }) {
   );
 }
 
-/* ---------------------------------------------------------
-   Inline brand-mark SVGs (no extra icon-pack dependency)
---------------------------------------------------------- */
+
 function ReactMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none">
@@ -158,18 +156,14 @@ const CORNER_POSITION: Record<string, string> = {
   'bottom-left': 'bottom-0 left-0 -translate-x-1/2 translate-y-1/2',
 };
 
-/**
- * Photo with a slowly orbiting ring of tech-stack logos anchored to
- * its four corners. The ring rotates continuously; each badge
- * counter-rotates so the logo itself always stays upright.
- */
+
 function PhotoWithOrbit() {
   return (
     <div className="relative mx-auto h-64 w-64 sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]">
       {/* ambient glow behind everything */}
       <div className="absolute inset-0 -z-10 rounded-full bg-primary/20 blur-3xl" />
 
-      {/* the photo — no card/background panel, so a transparent-bg PNG blends straight into the page */}
+     
       <div className="absolute inset-6 overflow-visible">
         <Image
           src="https://i.ibb.co.com/KccKQ324/Whats-App-Image-2025-12-08-at-6-03-13-PM-removebg-preview.png"
@@ -181,7 +175,7 @@ function PhotoWithOrbit() {
         />
       </div>
 
-      {/* rotating ring holding the 4 corner logos */}
+      
       <motion.div
         className="absolute inset-0"
         animate={{ rotate: 360 }}

@@ -7,7 +7,7 @@ import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-// ১. এই ফাইলের ভেতরেই সরাসরি ১০টি প্রজেক্টের ডেটা অ্যারে (কোনো ইম্পোর্ট ঝামেলা নেই)
+// ১. এই ফাইলের ভেতরেই সরাসরি প্রজেক্টের ডেটা (কোনো এক্সটার্নাল ইম্পোর্ট ঝামেলা নেই)
 const MY_PROJECTS = [
   {
     id: '1',
@@ -16,7 +16,7 @@ const MY_PROJECTS = [
     year: '2026',
     tagline: 'Premium real estate, reimagined',
     description: 'A full-stack premium real estate platform enabling seamless property search, browsing, and secure interaction.',
-    image: '/images/glasshaven.jpg', // আপনার প্রজেক্টের ইমেজ পাথ দিন
+    image: '/images/glasshaven.jpg', 
     gradient: 'from-blue-600/20 to-transparent',
     stack: ['Next.js', 'TypeScript', 'MySQL', 'Tailwind CSS'],
     metrics: [
@@ -25,8 +25,8 @@ const MY_PROJECTS = [
       { value: 'Role-Based', label: 'ACCESS' },
       { value: 'SSR', label: 'RENDERING' }
     ],
-    liveUrl: 'https://farabi-portfoliopro.vercel.app', // আপনার লাইভ লিংক
-    githubUrl: 'https://github.com/imranalfarabidevworks' // আপনার গিটহাব লিংক
+    liveUrl: 'https://farabi-portfoliopro.vercel.app', 
+    githubUrl: 'https://github.com/imranalfarabidevworks' 
   },
   {
     id: '2',
@@ -66,18 +66,19 @@ const MY_PROJECTS = [
     liveUrl: '#',
     githubUrl: '#'
   },
-  // <-- বাকি ৭টি প্রজেক্টের অবজেক্ট ঠিক এই লাইনের নিচে কমা (,) দিয়ে এক এক করে বসিয়ে দিন
+  // আপনি চাইলে ঠিক এই নিচে কমা (,) দিয়ে ৪ থেকে ১০ নম্বর প্রজেক্টগুলো একইভাবে বসিয়ে দিতে পারেন
 ];
 
-export function AllProjects() {
+// এখানে export default ব্যবহার করা হয়েছে Next.js পেজ রাউটিং এর নিয়ম অনুযায়ী
+export default function AllProjectsPage() {
   return (
-    <main className="relative min-h-screen py-24 sm:py-32 bg-background">
-      {/* Background Glow Settings */}
+    <main className="relative min-h-screen py-24 sm:py-32 bg-background text-foreground">
+      {/* Background Glow Designs */}
       <div className="absolute inset-0 dot-pattern opacity-20" />
       <div className="absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Back Link to Home */}
+        {/* Back Home Link */}
         <Link
           href="/"
           className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
@@ -86,20 +87,20 @@ export function AllProjects() {
           Back home
         </Link>
 
-        {/* Header Title */}
+        {/* Header Title Section */}
         <div className="mt-8 mb-16">
           <p className="font-mono text-xs uppercase tracking-widest text-primary">
             Archive · {MY_PROJECTS.length} Projects
           </p>
           <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            All <span className="text-gradient">Projects</span>
+            All Projects
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground text-sm">
-            সবগুলো প্রজেক্টের লিস্ট এবং সোর্স কোড এখানে সিরিয়াল অনুযায়ী সাজানো রয়েছে।
+            আমার তৈরি করা প্রজেক্টগুলোর ডিটেইলস, লাইভ লিংক এবং কোড এখানে সিরিয়াল অনুযায়ী দেখতে পাবেন।
           </p>
         </div>
 
-        {/* Grid Area */}
+        {/* Grid System */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {MY_PROJECTS.map((project, i) => (
             <motion.article
@@ -110,7 +111,7 @@ export function AllProjects() {
               className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card/40 backdrop-blur-sm flex flex-col justify-between h-full"
             >
               <div>
-                {/* Project Image View */}
+                {/* Project Image & Badges */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   {project.image && (
                     <img
@@ -134,7 +135,7 @@ export function AllProjects() {
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="font-mono text-xs text-primary">{project.tagline}</p>
-                    <h3 className="mt-1 font-display text-xl font-bold tracking-tight---">
+                    <h3 className="mt-1 font-display text-xl font-bold tracking-tight">
                       {project.name}
                     </h3>
                   </div>
@@ -158,7 +159,7 @@ export function AllProjects() {
                     ))}
                   </div>
 
-                  {/* Metrics Row mapping */}
+                  {/* Metrics Row */}
                   <div className="mt-5 grid grid-cols-4 gap-2 border-t border-border/40 pt-5">
                     {project.metrics.map((metric) => (
                       <div key={metric.label}>

@@ -418,7 +418,7 @@ export function ProjectsShowcase() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-16 flex justify-center"
         >
-          <Link href="/projects" className="group relative" data-cursor="pointer">
+          <Link href="./projects.tsx" className="group relative" data-cursor="pointer">
             <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-cyan-400 via-primary to-cyan-600 opacity-40 blur transition-opacity duration-500 group-hover:opacity-80" />
             <div className="relative flex items-center gap-3 overflow-hidden rounded-full border border-border/60 bg-card/60 px-8 py-4 backdrop-blur-sm transition-all duration-300 group-hover:border-primary/50 group-hover:bg-card/90">
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />

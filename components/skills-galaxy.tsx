@@ -5,11 +5,11 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Html, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Zap, Briefcase, TrendingUp } from 'lucide-react';
+import { X, Zap,  TrendingUp } from 'lucide-react';
 
 type Skill = {
   name: string;
-  category: 'Frontend' | 'Backend' | 'AI/ML' | 'DevOps' | 'Mobile';
+  category: 'Frontend' | 'Backend' ;
   level: number;
   years: number;
   projects: number;
@@ -17,30 +17,24 @@ type Skill = {
 };
 
 const SKILLS: Skill[] = [
-  { name: 'TypeScript', category: 'Frontend', level: 95, years: 5, projects: 40, color: '#3178c6' },
-  { name: 'React', category: 'Frontend', level: 96, years: 5, projects: 38, color: '#61dafb' },
-  { name: 'Next.js', category: 'Frontend', level: 94, years: 4, projects: 25, color: '#ffffff' },
-  { name: 'Three.js', category: 'Frontend', level: 85, years: 3, projects: 8, color: '#22d3ee' },
-  { name: 'Tailwind', category: 'Frontend', level: 95, years: 4, projects: 35, color: '#06b6d4' },
-  { name: 'Node.js', category: 'Backend', level: 93, years: 5, projects: 30, color: '#3c873a' },
-  { name: 'Python', category: 'AI/ML', level: 92, years: 5, projects: 28, color: '#ffd43b' },
-  { name: 'FastAPI', category: 'Backend', level: 90, years: 3, projects: 12, color: '#009688' },
-  { name: 'PyTorch', category: 'AI/ML', level: 88, years: 3, projects: 10, color: '#ee4c2c' },
-  { name: 'PostgreSQL', category: 'Backend', level: 91, years: 4, projects: 22, color: '#336791' },
-  { name: 'Redis', category: 'Backend', level: 87, years: 3, projects: 15, color: '#dc382d' },
-  { name: 'Docker', category: 'DevOps', level: 88, years: 4, projects: 25, color: '#2496ed' },
-  { name: 'AWS', category: 'DevOps', level: 85, years: 3, projects: 18, color: '#ff9900' },
-  { name: 'GraphQL', category: 'Backend', level: 86, years: 3, projects: 9, color: '#e10098' },
-  { name: 'React Native', category: 'Mobile', level: 84, years: 3, projects: 7, color: '#61dafb' },
-  { name: 'Prisma', category: 'Backend', level: 89, years: 3, projects: 14, color: '#2d3748' },
+  { name: 'TypeScript', category: 'Frontend', level: 95, years: 1, projects: 7, color: '#3178c6' },
+  { name: 'React', category: 'Frontend', level: 96, years: 2, projects: 18, color: '#61dafb' },
+  { name: 'Next.js', category: 'Frontend', level: 94, years: 3, projects: 25, color: '#ffffff' },
+  
+  { name: 'Tailwind', category: 'Frontend', level: 95, years: 3, projects: 35, color: '#06b6d4' },
+  { name: 'Node.js', category: 'Backend', level: 93, years: 2, projects: 10, color: '#3c873a' },
+  { name: 'Express.js', category: 'Backend', level: 92, years: 2, projects: 10, color: '#ffd43b' },
+  { name: 'FastAPI', category: 'Backend', level: 90, years: 2, projects: 12, color: '#009688' },
+  
+  { name: 'MySQL', category: 'Backend', level: 91, years: 1, projects: 5, color: '#336791' },
+
+  { name: 'Supabase', category: 'Backend', level: 89, years: 1, projects: 4, color: '#2d3748' },
 ];
 
 const CATEGORY_COLORS: Record<Skill['category'], string> = {
   Frontend: '#22d3ee',
   Backend: '#3c873a',
-  'AI/ML': '#ee4c2c',
-  DevOps: '#2496ed',
-  Mobile: '#a855f7',
+  
 };
 
 function SkillNode({
@@ -258,7 +252,7 @@ function SkillDetail({ skill, onClose }: { skill: Skill; onClose: () => void }) 
 }
 
 const FILTERS: ('All' | Skill['category'])[] = [
-  'All', 'Frontend', 'Backend', 'AI/ML', 'DevOps', 'Mobile',
+  'All', 'Frontend', 'Backend', 
 ];
 
 export function SkillsGalaxy() {

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight,ArrowRight, Github, ExternalLink, X, Layers } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Github, ExternalLink, X, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -20,6 +20,8 @@ type Project = {
   metrics: { label: string; value: string }[];
   stack: string[];
   journey: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 };
 
 const PROJECTS: Project[] = [
@@ -50,6 +52,8 @@ const PROJECTS: Project[] = [
       'Implemented order confirmation workflows so admins can approve or reject purchase requests.',
       'Used Next.js server-side rendering with TypeScript for fast page loads and a secure MySQL schema for data integrity.',
     ],
+    liveUrl: 'https://glasshaven-estates.vercel.app', // TODO: add live demo link
+    githubUrl: 'https://github.com/imranalfarabidevworks/glasshaven',
   },
   {
     id: 'freshmart',
@@ -68,7 +72,7 @@ const PROJECTS: Project[] = [
       { label: 'Stack', value: 'Next.js' },
       { label: 'Database', value: 'MongoDB' },
       { label: 'Auth', value: 'Better Auth' },
-      { label: 'Checkout', value: 'Streamlined' },
+      { label: 'Checkout', value: 'Stripe' },
     ],
     stack: ['Next.js', 'TypeScript', 'MongoDB', 'Better Auth', 'Tailwind CSS'],
     journey: [
@@ -78,6 +82,8 @@ const PROJECTS: Project[] = [
       'Implemented user authentication and session management with Better Auth on top of MongoDB.',
       'Structured MongoDB schemas for products, orders, and users to support fast, reliable queries.',
     ],
+    liveUrl: 'https://freshmart-bay.vercel.app', // TODO: add live demo link
+    githubUrl: 'https://github.com/imranalfarabidevworks/Fresh-Mart',
   },
   {
     id: 'launch-forge',
@@ -106,6 +112,8 @@ const PROJECTS: Project[] = [
       'Designed a responsive, intuitive interface optimized for fluid layout modifications.',
       'Implemented drag-and-drop mechanics so users can rearrange their site sections visually.',
     ],
+    liveUrl: 'https://lanuch-forge-gold.vercel.app', // TODO: add live demo link
+    githubUrl: 'https://github.com/imranalfarabidevworks/lanuch-forge',
   },
 ];
 
@@ -234,6 +242,9 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
     };
   }, [onClose]);
 
+  const hasLive = Boolean(project.liveUrl);
+  const hasCode = Boolean(project.githubUrl);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -336,29 +347,31 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             </ol>
           </div>
 
-          <div className="mt-8 flex flex-col gap-3 border-t border-border/40 pt-6 sm:flex-row">
-            <Button className="flex-1 rounded-full" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live Demo
-              </a>
-            </Button>
-            <Button variant="outline" className="flex-1 rounded-full" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" />
-                View Code
-              </a>
-            </Button>
-          </div>
+          {(hasLive || hasCode) && (
+            <div className="mt-8 flex flex-col gap-3 border-t border-border/40 pt-6 sm:flex-row">
+              {hasLive && (
+                <Button className="flex-1 rounded-full" asChild>
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live Demo
+                  </a>
+                </Button>
+              )}
+              {hasCode && (
+                <Button variant="outline" className="flex-1 rounded-full" asChild>
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    View Code
+                  </a>
+                </Button>
+              )}
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>
   );
 }
-
-
-
-
 
 export function ProjectsShowcase() {
   const [selected, setSelected] = React.useState<Project | null>(null);
@@ -405,7 +418,7 @@ export function ProjectsShowcase() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-16 flex justify-center"
         >
-          <Link href="./projects.tsx" className="group relative" data-cursor="pointer">
+          <Link href="/projects" className="group relative" data-cursor="pointer">
             <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-cyan-400 via-primary to-cyan-600 opacity-40 blur transition-opacity duration-500 group-hover:opacity-80" />
             <div className="relative flex items-center gap-3 overflow-hidden rounded-full border border-border/60 bg-card/60 px-8 py-4 backdrop-blur-sm transition-all duration-300 group-hover:border-primary/50 group-hover:bg-card/90">
               <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
@@ -428,4 +441,3 @@ export function ProjectsShowcase() {
     </section>
   );
 }
-      

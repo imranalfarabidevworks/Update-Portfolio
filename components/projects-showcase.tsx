@@ -1,8 +1,8 @@
 'use client';
-
+import Link from 'next/link';
 import * as React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Github, ExternalLink, X, Layers } from 'lucide-react';
+import { ArrowUpRight,ArrowRight, Github, ExternalLink, X, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -356,6 +356,10 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
   );
 }
 
+
+
+// ... (Project type, PROJECTS array, ProjectCard, useBounds, ProjectModal — অপরিবর্তিত)
+
 export function ProjectsShowcase() {
   const [selected, setSelected] = React.useState<Project | null>(null);
 
@@ -392,6 +396,28 @@ export function ProjectsShowcase() {
             />
           ))}
         </div>
+
+        {/* View All Projects CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-16 flex justify-center"
+        >
+          <Link href="/projects" className="group relative" data-cursor="pointer">
+            <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-cyan-400 via-primary to-cyan-600 opacity-40 blur transition-opacity duration-500 group-hover:opacity-80" />
+            <div className="relative flex items-center gap-3 overflow-hidden rounded-full border border-border/60 bg-card/60 px-8 py-4 backdrop-blur-sm transition-all duration-300 group-hover:border-primary/50 group-hover:bg-card/90">
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="font-display text-sm font-semibold tracking-wide">
+                View All Projects
+              </span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </span>
+            </div>
+          </Link>
+        </motion.div>
       </div>
 
       <AnimatePresence>
@@ -402,3 +428,4 @@ export function ProjectsShowcase() {
     </section>
   );
 }
+      

@@ -157,26 +157,33 @@ const CORNER_POSITION: Record<string, string> = {
 
 function PhotoWithOrbit() {
   return (
-   
     <div className="relative mx-auto h-72 w-72 sm:h-85 sm:w-85 md:h-[24rem] md:w-[24rem] lg:h-[26rem] lg:w-[26rem] -translate-x-2 md:-translate-x-8 lg:-translate-x-12">
-      {/* Ambient soft background glow */}
+      {/* Soft Background Glow */}
       <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-cyan-500/10 to-primary/10 blur-3xl animate-pulse-glow" />
 
-      
-      <div className="absolute inset-2 overflow-visible rounded-full border border-white/10 bg-card/15 backdrop-blur-[4px] shadow-[inset_0_0_30px_rgba(34,211,238,0.05),0_0_40px_rgba(0,0,0,0.6)]">
+      {/* 
+        ✨ গ্লাসমরফিজম মাস্ক কন্টেইনার:
+        ছবির চারকোণা সলিড কালো বক্সকে ঢাকার জন্য ব্যাকড্রপ ব্লার ফিল্টার অ্যাড করা হয়েছে।
+      */}
+      <div className="absolute inset-2 overflow-hidden rounded-full border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] backdrop-blur-[12px] shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.08)]">
+        
+        {/* গ্লাস ওভারলে গ্রেডিয়েন্ট ফিল্টার */}
+        <div className="absolute inset-0 z-10 rounded-full bg-gradient-to-t from-background/30 via-transparent to-transparent pointer-events-none" />
+        
         <Image
-          src="https://i.ibb.co.com/dw3r0T42/image.png"
+          src="https://i.ibb.co.com/KccKQ324/Whats-App-Image-2025-12-08-at-6-03-13-PM-removebg-preview.png"
           alt="Imran Al Farabi"
           fill
           sizes="(max-width: 640px) 280px, (max-width: 1024px) 360px, 420px"
-          className="object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] transition-transform duration-500 hover:scale-[1.01]"
+         
+          className="object-cover scale-105 translate-y-2 mix-blend-screen brightness-110 contrast-105 transition-transform duration-500 hover:scale-110"
           priority
         />
       </div>
 
-     
+      {/* আইকন অরবিট লেয়ার */}
       <motion.div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none z-20"
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, ease: 'linear', duration: 28 }}
       >
@@ -208,7 +215,7 @@ export function HeroSection() {
     >
       <HeroCanvas />
 
-      {/* Background Gradients overlays */}
+      {/* Layer Overlay Gradients */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
@@ -217,7 +224,7 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4 lg:px-8 xl:gap-8">
         
-        {/* ---------------- Right Layer: Moves to Top on Mobile for perfect hierarchy ---------------- */}
+        {/* Right Content (Image) - Mobile ফ্রেন্ডলি পজিশন */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -227,7 +234,7 @@ export function HeroSection() {
           <PhotoWithOrbit />
         </motion.div>
 
-        {/* ---------------- Left Layer: Main Text Content ---------------- */}
+        {/* Left Content (Text) */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -265,7 +272,7 @@ export function HeroSection() {
             </p>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* Action Buttons */}
           <motion.div
             variants={item}
             className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start"
@@ -293,7 +300,7 @@ export function HeroSection() {
             </Button>
           </motion.div>
 
-          {/* Location Badge */}
+          {/* Location Info */}
           <motion.div
             variants={item}
             className="mt-10 flex items-center justify-center gap-2 text-[11px] font-mono text-muted-foreground/80 lg:justify-start"
@@ -302,7 +309,7 @@ export function HeroSection() {
             <span>Dhaka, Bangladesh · UTC+6</span>
           </motion.div>
 
-          {/* Stats Counter Grid */}
+          {/* Stats Grid */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -321,7 +328,7 @@ export function HeroSection() {
 
       </div>
 
-      {/* Bottom Scroll Indicator */}
+      {/* Animated Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

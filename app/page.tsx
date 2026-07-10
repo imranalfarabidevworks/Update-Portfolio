@@ -7,6 +7,7 @@ import { StoryExperience } from '@/components/story-experience';
 import { ProjectsShowcase } from '@/components/projects-showcase';
 import { SkillsGalaxy } from '@/components/skills-galaxy';
 import { SocialProof } from '@/components/social-proof';
+import { AboutSection } from '@/components/about-section';
 
 const LoadingSequence = dynamic(
   () => import('@/components/loading-sequence').then((m) => m.LoadingSequence),
@@ -24,6 +25,7 @@ export default function Home() {
         style={{ transition: 'opacity 0.6s ease-out 0.2s' }}
       >
         <HeroSection />
+        <AboutSection />
         <StoryExperience />
         <ProjectsShowcase />
         <SkillsGalaxy />

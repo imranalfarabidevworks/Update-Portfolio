@@ -58,7 +58,9 @@ export function SiteHeader() {
             className="group flex items-center gap-2"
           >
             <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-primary to-cyan-600 text-sm font-bold text-white">
-              <span className="font-display">F</span>
+              <span className="font-display">
+                <img src='https://i.ibb.co.com/7NTN0hp9/Chat-GPT-Image-Jul-10-2026-08-47-19-PM.png'></img>
+              </span>
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
             <span className="font-display text-sm font-semibold tracking-tight">

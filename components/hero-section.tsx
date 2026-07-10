@@ -157,40 +157,41 @@ const CORNER_POSITION: Record<string, string> = {
 
 function PhotoWithOrbit() {
   return (
-    <div className="relative mx-auto h-60 w-60 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[22rem] lg:w-[22rem]">
+   
+    <div className="relative mx-auto h-72 w-72 sm:h-85 sm:w-85 md:h-[24rem] md:w-[24rem] lg:h-[26rem] lg:w-[26rem] -translate-x-2 md:-translate-x-8 lg:-translate-x-12">
       {/* Ambient soft background glow */}
       <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-cyan-500/10 to-primary/10 blur-3xl animate-pulse-glow" />
 
-      {/* Profile Image Wrapper */}
-      <div className="absolute inset-4 overflow-visible rounded-full border border-white/5 bg-card/10 backdrop-blur-[2px] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)]">
+      
+      <div className="absolute inset-2 overflow-visible rounded-full border border-white/10 bg-card/15 backdrop-blur-[4px] shadow-[inset_0_0_30px_rgba(34,211,238,0.05),0_0_40px_rgba(0,0,0,0.6)]">
         <Image
-          src="https://i.ibb.co.com/KccKQ324/Whats-App-Image-2025-12-08-at-6-03-13-PM-removebg-preview.png"
+          src="https://i.ibb.co.com/dw3r0T42/image.png"
           alt="Imran Al Farabi"
           fill
-          sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 320px"
-          className="object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.02]"
+          sizes="(max-width: 640px) 280px, (max-width: 1024px) 360px, 420px"
+          className="object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.7)] transition-transform duration-500 hover:scale-[1.01]"
           priority
         />
       </div>
 
-      {/* Orbiting Tech Icons */}
+     
       <motion.div
         className="absolute inset-0 pointer-events-none"
         animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, ease: 'linear', duration: 25 }}
+        transition={{ repeat: Infinity, ease: 'linear', duration: 28 }}
       >
         {ORBIT_TECHS.map(({ name, Icon, corner }) => (
           <div
             key={name}
-            className={`absolute h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 pointer-events-auto ${CORNER_POSITION[corner]}`}
+            className={`absolute h-11 w-11 sm:h-13 sm:w-13 md:h-14 md:w-14 pointer-events-auto ${CORNER_POSITION[corner]}`}
           >
             <motion.div
-              className="glass flex h-full w-full items-center justify-center rounded-full border border-white/10 bg-background/60 shadow-[0_4px_12px_rgba(0,0,0,0.3)] backdrop-blur-md transition-colors hover:border-cyan-400/50"
+              className="glass flex h-full w-full items-center justify-center rounded-full border border-white/15 bg-background/80 shadow-[0_4px_15px_rgba(0,0,0,0.4)] backdrop-blur-md transition-all hover:border-cyan-400 hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
               animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, ease: 'linear', duration: 25 }}
+              transition={{ repeat: Infinity, ease: 'linear', duration: 28 }}
               title={name}
             >
-              <Icon className="h-5 w-5 text-cyan-400/90 sm:h-6 sm:w-6 md:h-7 md:w-7" />
+              <Icon className="h-5.5 w-5.5 text-cyan-400 sm:h-6 sm:w-6 md:h-6.5 md:w-6.5" />
             </motion.div>
           </div>
         ))}

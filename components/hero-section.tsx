@@ -12,7 +12,7 @@ const HeroCanvas = dynamic(() => import('./hero-canvas').then((m) => m.HeroCanva
   ssr: false,
 });
 
-const ROLES = ['Full Stack Developer', 'AI Engineer', 'Product Builder'];
+const ROLES = ['Frontend Developer', 'UI/UX Specialist', 'Product Builder'];
 
 const container = {
   hidden: { opacity: 0 },
@@ -60,26 +60,25 @@ function AnimatedRole() {
   }, [displayed, index, phase]);
 
   return (
-    <div className="flex items-center gap-2 font-mono text-sm text-primary">
-      <span className="inline-block h-4 w-[2px] animate-pulse bg-primary" />
-      <span>{displayed}</span>
+    <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-cyan-400 font-medium">
+      <span className="inline-block h-4 w-[2px] animate-pulse bg-cyan-400" />
+      <span className="tracking-wide">{displayed}</span>
     </div>
   );
 }
 
 function StatBlock({ value, label }: { value: string; label: string }) {
   return (
-    <div className="text-center">
-      <div className="font-display text-2xl font-bold text-foreground sm:text-3xl">
+    <div className="text-center p-1">
+      <div className="font-display text-xl font-bold text-foreground sm:text-2xl md:text-3xl bg-gradient-to-b from-white to-slate-300 bg-clip-text text-transparent">
         {value}
       </div>
-      <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+      <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground/80 sm:text-xs">
         {label}
       </div>
     </div>
   );
 }
-
 
 function ReactMark({ className }: { className?: string }) {
   return (
@@ -150,50 +149,48 @@ const ORBIT_TECHS = [
 ];
 
 const CORNER_POSITION: Record<string, string> = {
-  'top-left': 'top-0 left-0 -translate-x-1/2 -translate-y-1/2',
-  'top-right': 'top-0 right-0 translate-x-1/2 -translate-y-1/2',
-  'bottom-right': 'bottom-0 right-0 translate-x-1/2 translate-y-1/2',
-  'bottom-left': 'bottom-0 left-0 -translate-x-1/2 translate-y-1/2',
+  'top-left': 'top-2 left-2 sm:top-0 sm:left-0 -translate-x-1/4 -translate-y-1/4 sm:-translate-x-1/3 sm:-translate-y-1/3',
+  'top-right': 'top-2 right-2 sm:top-0 sm:right-0 translate-x-1/4 -translate-y-1/4 sm:translate-x-1/3 sm:-translate-y-1/3',
+  'bottom-right': 'bottom-2 right-2 sm:bottom-0 sm:right-0 translate-x-1/4 translate-y-1/4 sm:translate-x-1/3 sm:translate-y-1/3',
+  'bottom-left': 'bottom-2 left-2 sm:bottom-0 sm:left-0 -translate-x-1/4 translate-y-1/4 sm:-translate-x-1/3 sm:translate-y-1/3',
 };
-
 
 function PhotoWithOrbit() {
   return (
-    <div className="relative mx-auto h-64 w-64 sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]">
-      {/* ambient glow behind everything */}
-      <div className="absolute inset-0 -z-10 rounded-full bg-primary/20 blur-3xl" />
+    <div className="relative mx-auto h-60 w-60 sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[22rem] lg:w-[22rem]">
+      {/* Ambient soft background glow */}
+      <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-tr from-cyan-500/10 to-primary/10 blur-3xl animate-pulse-glow" />
 
-     
-      <div className="absolute inset-6 overflow-visible">
+      {/* Profile Image Wrapper */}
+      <div className="absolute inset-4 overflow-visible rounded-full border border-white/5 bg-card/10 backdrop-blur-[2px] shadow-[inset_0_0_20px_rgba(255,255,255,0.02)]">
         <Image
           src="https://i.ibb.co.com/KccKQ324/Whats-App-Image-2025-12-08-at-6-03-13-PM-removebg-preview.png"
           alt="Imran Al Farabi"
           fill
-          sizes="(max-width: 768px) 256px, 352px"
-          className="object-contain drop-shadow-2xl"
+          sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 320px"
+          className="object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.02]"
           priority
         />
       </div>
 
-      
+      {/* Orbiting Tech Icons */}
       <motion.div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, ease: 'linear', duration: 18 }}
+        transition={{ repeat: Infinity, ease: 'linear', duration: 25 }}
       >
         {ORBIT_TECHS.map(({ name, Icon, corner }) => (
           <div
             key={name}
-            className={`absolute h-12 w-12 sm:h-14 sm:w-14 ${CORNER_POSITION[corner]}`}
+            className={`absolute h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 pointer-events-auto ${CORNER_POSITION[corner]}`}
           >
-            {/* counter-rotate so the icon itself stays upright */}
             <motion.div
-              className="glass flex h-full w-full items-center justify-center rounded-full border border-border/60 shadow-lg"
+              className="glass flex h-full w-full items-center justify-center rounded-full border border-white/10 bg-background/60 shadow-[0_4px_12px_rgba(0,0,0,0.3)] backdrop-blur-md transition-colors hover:border-cyan-400/50"
               animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, ease: 'linear', duration: 18 }}
+              transition={{ repeat: Infinity, ease: 'linear', duration: 25 }}
               title={name}
             >
-              <Icon className="h-6 w-6 text-primary sm:h-7 sm:w-7" />
+              <Icon className="h-5 w-5 text-cyan-400/90 sm:h-6 sm:w-6 md:h-7 md:w-7" />
             </motion.div>
           </div>
         ))}
@@ -206,55 +203,68 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20 pb-16 lg:pt-24"
     >
       <HeroCanvas />
 
+      {/* Background Gradients overlays */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background to-transparent" />
-        <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] sm:h-[700px] sm:w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/5 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4 lg:px-8 xl:gap-2">
-        {/* ---------------- Left: text content ---------------- */}
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-4 lg:px-8 xl:gap-8">
+        
+        {/* ---------------- Right Layer: Moves to Top on Mobile for perfect hierarchy ---------------- */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="order-first lg:order-last lg:-translate-x-4 xl:-translate-x-8"
+        >
+          <PhotoWithOrbit />
+        </motion.div>
+
+        {/* ---------------- Left Layer: Main Text Content ---------------- */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="text-center lg:text-left"
+          className="text-center lg:text-left flex flex-col justify-center"
         >
-          <motion.div variants={item} className="mb-6 flex justify-center lg:justify-start">
+          <motion.div variants={item} className="mb-5 flex justify-center lg:justify-start">
             <Badge
               variant="outline"
-              className="glass gap-2 rounded-full px-4 py-1.5 text-xs font-medium"
+              className="glass gap-2 rounded-full px-4 py-1.5 text-[11px] font-medium border-white/5 bg-white/5"
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              <span className="text-muted-foreground">Available for opportunities</span>
+              <span className="text-slate-300">Available for opportunities</span>
             </Badge>
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="font-display text-5xl font-bold leading-[0.95] tracking-tight sm:text-7xl lg:text-6xl xl:text-7xl"
+            className="font-display text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl text-white"
           >
             <span className="block">IMRAN AL</span>
-            <span className="block text-gradient">FARABI</span>
+            <span className="block text-gradient bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">FARABI</span>
           </motion.h1>
 
           <motion.div
             variants={item}
-            className="mt-6 flex flex-col items-center gap-3 lg:items-start"
+            className="mt-5 flex flex-col items-center gap-2.5 lg:items-start"
           >
             <AnimatedRole />
-            <p className="max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
-              I build digital products that solve real problems.
+            <p className="max-w-xl text-balance text-sm sm:text-base text-muted-foreground leading-relaxed">
+              I build high-performance user interfaces and responsive digital products that combine beautiful dark aesthetics with clean code.
             </p>
           </motion.div>
 
+          {/* CTA Buttons */}
           <motion.div
             variants={item}
             className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start"
@@ -264,16 +274,16 @@ export function HeroSection() {
               onClick={() =>
                 document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })
               }
-              className="group w-full rounded-full bg-primary px-8 text-base hover:bg-primary/90 sm:w-auto"
+              className="group w-full rounded-full bg-primary px-7 text-sm font-medium hover:bg-primary/90 sm:w-auto transition-all shadow-[0_0_20px_rgba(34,211,238,0.15)] hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]"
             >
-              <Sparkles className="mr-2 h-4 w-4" />
+              <Sparkles className="mr-2 h-4 w-4 text-cyan-200" />
               Explore Work
             </Button>
             <Button
               size="lg"
               variant="outline"
               asChild
-              className="w-full rounded-full px-8 text-base sm:w-auto"
+              className="w-full rounded-full px-7 text-sm font-medium border-white/10 bg-white/5 hover:bg-white/10 sm:w-auto transition-all"
             >
               <a href="https://github.com/imranalfarabidevworks" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
@@ -282,54 +292,49 @@ export function HeroSection() {
             </Button>
           </motion.div>
 
+          {/* Location Badge */}
           <motion.div
             variants={item}
-            className="mt-12 flex items-center justify-center gap-2 text-xs text-muted-foreground lg:justify-start"
+            className="mt-10 flex items-center justify-center gap-2 text-[11px] font-mono text-muted-foreground/80 lg:justify-start"
           >
-            <MapPin className="h-3 w-3" />
+            <MapPin className="h-3 w-3 text-cyan-400" />
             <span>Dhaka, Bangladesh · UTC+6</span>
           </motion.div>
 
+          {/* Stats Counter Grid */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
-            className="mt-12 lg:mt-16"
+            transition={{ delay: 1.1, duration: 0.6 }}
+            className="mt-10 lg:mt-12"
           >
-            <div className="glass mx-auto grid max-w-md grid-cols-3 gap-4 rounded-2xl px-6 py-5 lg:mx-0">
-              <StatBlock value="5+" label="Years" />
-              <div className="border-x border-border/50">
+            <div className="glass mx-auto grid max-w-sm grid-cols-3 gap-2 rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-4 sm:px-6 lg:mx-0 shadow-xl">
+              <StatBlock value="3rd Year" label="Honors" />
+              <div className="border-x border-white/5">
                 <StatBlock value="40+" label="Projects" />
               </div>
-              <StatBlock value="15+" label="AI Models" />
+              <StatBlock value="15+" label="UI Designs" />
             </div>
           </motion.div>
         </motion.div>
 
-        {/* ---------------- Right: photo with orbiting logos ---------------- */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="order-first lg:order-last lg:-translate-x-10 xl:-translate-x-16"
-        >
-          <PhotoWithOrbit />
-        </motion.div>
       </div>
 
+      {/* Bottom Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1.8 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:block"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="flex flex-col items-center gap-2 text-muted-foreground"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-1.5 text-muted-foreground/60 hover:text-muted-foreground transition-colors cursor-pointer"
+          onClick={() => document.querySelector('#story')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          <span className="font-mono text-[10px] uppercase tracking-widest">Scroll</span>
-          <ArrowDown className="h-4 w-4" />
+          <span className="font-mono text-[9px] uppercase tracking-widest">Scroll</span>
+          <ArrowDown className="h-3.5 w-3.5" />
         </motion.div>
       </motion.div>
     </section>

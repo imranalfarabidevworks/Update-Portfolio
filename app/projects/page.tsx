@@ -7,7 +7,6 @@ import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-// ১. এখানে ১৫টি প্রজেক্টের অ্যারে তৈরি করে দেওয়া হলো
 const MY_PROJECTS = [
   
   // 4 to 15
@@ -16,8 +15,8 @@ const MY_PROJECTS = [
     name: 'AI PromptHive',
     category: 'React',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ৪র্থ প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'The Ultimate Hub for AI Prompt Engineering',
+    description: 'A centralized platform designed for creators and developers to discover, test, and share high-performing AI prompts optimized for modern LLMs.',
     image: 'https://i.ibb.co.com/CKBzhyFG/Chat-GPT-Image-Jun-29-2026-10-53-10-PM.png',
     gradient: 'from-amber-600/20 to-transparent',
     stack: ['React', 'Node.js', 'Tailwind'],
@@ -30,8 +29,8 @@ const MY_PROJECTS = [
     name: 'Caffe Houes',
     category: 'Next.js',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ৫ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'Premium Coffee Crafted for Your Moments',
+    description: 'A beautifully designed, dark-themed aesthetic landing page for a premium coffee shop featuring seamless menu browsing and reservation layouts.',
     image: 'https://i.ibb.co.com/39GBfmzZ/Screenshot-2026-06-26-010557.png',
     gradient: 'from-rose-600/20 to-transparent',
     stack: ['Next.js', 'Prisma', 'Tailwind'],
@@ -44,8 +43,8 @@ const MY_PROJECTS = [
     name: 'Video Editor',
     category: 'Full-Stack',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ৬ষ্ঠ প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'The Visual Alchemist & Premium Video Editing',
+    description: 'A high-end cinematic portfolio built to showcase professional video editing projects, featuring sleek video embedding and motion layouts.',
     image: 'https://i.ibb.co.com/KxzmXFGj/Screenshot-158.png',
     gradient: 'from-cyan-600/20 to-transparent',
     stack: ['React', 'Express', 'MongoDB'],
@@ -58,8 +57,8 @@ const MY_PROJECTS = [
     name: 'Duzo Food',
     category: 'Frontend',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ৭ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'Fresh & Organic Nature in Every Bite',
+    description: 'An engaging frontend e-commerce layout for an organic food delivery service focused on clean product presentation and responsive cataloging.',
     image: 'https://i.ibb.co.com/QvGCdg84/image.png',
     gradient: 'from-fuchsia-600/20 to-transparent',
     stack: ['HTML', 'CSS', 'JavaScript'],
@@ -72,8 +71,8 @@ const MY_PROJECTS = [
     name: 'Zexo Perfume',
     category: 'React',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ৮ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'Experience the Essence of Pure Luxury',
+    description: 'A premium and minimal luxury perfume showcase website designed with rich typography, focusing on deep visual aesthetics and product branding.',
     image: 'https://i.ibb.co.com/TD7Fjtf7/image.png',
     gradient: 'from-violet-600/20 to-transparent',
     stack: ['React', 'Redux Toolkit', 'Sass'],
@@ -86,8 +85,8 @@ const MY_PROJECTS = [
     name: 'Tiles Gallery',
     category: 'Next.js',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ৯ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'Discover Your Perfect Architectural Aesthetic',
+    description: 'A comprehensive dynamic gallery application built to browse, categorize, and discover premium interior tiles and architectural designs seamlessly.',
     image: 'https://i.ibb.co.com/2YHrzD89/Screenshot-129.png',
     gradient: 'from-orange-600/20 to-transparent',
     stack: ['Next.js', 'Sanity.io', 'Tailwind'],
@@ -98,10 +97,10 @@ const MY_PROJECTS = [
   {
     id: '10',
     name: 'MediScript',
-    category: 'Mobile App',
+    category: 'web App',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ১০ম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'Smart Digital Prescription & Healthcare Solutions',
+    description: 'A cross-platform mobile application interface layout focused on streamlined digital prescription tracking, patient management, and notifications.',
     image: 'https://i.ibb.co.com/gbDnmN1F/Chat-GPT-Image-Jun-29-2026-11-00-14-PM.png',
     gradient: 'from-indigo-600/20 to-transparent',
     stack: ['React Native', 'Expo', 'Firebase'],
@@ -114,8 +113,8 @@ const MY_PROJECTS = [
     name: 'Task Flow',
     category: 'Next.js',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ১১তম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'Manage Projects Faster, Collaborate Better',
+    description: 'A sleek project management dashboard concept packed with interactive kanban tools, active progress metrics, and intuitive task assignments.',
     image: 'https://i.ibb.co.com/XBXsMjf/image.png',
     gradient: 'from-pink-600/20 to-transparent',
     stack: ['Next.js', 'Framer Motion'],
@@ -128,8 +127,8 @@ const MY_PROJECTS = [
     name: 'Doctor Appointment',
     category: 'React',
     year: '2025',
-    tagline: 'Short catchy tagline here',
-    description: 'এখানে আপনার ১২তম প্রজেক্টের সংক্ষিপ্ত ডেসক্রিপশন লিখুন।',
+    tagline: 'Your Health, Our Priority · Seamless Booking',
+    description: 'A reliable healthcare platform interface allowing patients to explore doctor specialties, view real-time availability, and schedule appointments effortlessly.',
     image: 'https://i.ibb.co.com/TMCrvGK4/image.png',
     gradient: 'from-lime-600/20 to-transparent',
     stack: ['React', 'Zustand', 'Shadcn UI'],
@@ -207,12 +206,11 @@ export default function ProjectsPage() {
             All Projects
           </h1>
           <p className="mt-3 max-w-2xl text-muted-foreground text-xs sm:text-sm leading-relaxed">
-            আমার তৈরি করা ১৫টি প্রজেক্টের লিস্ট এবং সোর্স কোড এখানে রেসপন্সিভ লেআউটে সাজানো রয়েছে।
+            
           </p>
         </div>
 
-        {/* 100% Responsive Grid Layout */}
-        {/* মোবাইল ডিভাইসে ১টি, ট্যাবলেটে ২টি এবং ডেক্সটপে ৩টি কলামে অটো-রিসাইজ হবে */}
+       
         <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {MY_PROJECTS.map((project, i) => (
             <motion.article

@@ -23,7 +23,7 @@ type Chapter = {
 
 const CHAPTERS: Chapter[] = [
   {
-    num: 1,
+    num: 2,
     icon: Code2,
     title: 'How I Started Programming',
     subtitle: 'The first keystroke',
@@ -32,7 +32,7 @@ const CHAPTERS: Chapter[] = [
     accent: 'from-cyan-500/20 to-blue-500/5',
   },
   {
-    num: 2,
+    num: 3,
     icon: GraduationCap,
     title: 'My Learning Journey',
     subtitle: 'From tutorials to architecture',
@@ -41,7 +41,7 @@ const CHAPTERS: Chapter[] = [
     accent: 'from-emerald-500/20 to-teal-500/5',
   },
   {
-    num: 3,
+    num: 4,
     icon: Rocket,
     title: 'Building Real Products',
     subtitle: 'Shipping to real users',
@@ -50,7 +50,7 @@ const CHAPTERS: Chapter[] = [
     accent: 'from-amber-500/20 to-orange-500/5',
   },
   {
-    num: 4,
+    num: 5,
     icon: BrainCircuit,
     title: 'AI Engineering',
     subtitle: 'Teaching machines to think',
@@ -59,7 +59,7 @@ const CHAPTERS: Chapter[] = [
     accent: 'from-violet-500/20 to-fuchsia-500/5',
   },
   {
-    num: 5,
+    num: 6,
     icon: Telescope,
     title: 'Future Vision',
     subtitle: 'What comes next',

@@ -141,7 +141,7 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="mt-6 text-sm sm:text-base leading-relaxed text-muted-foreground/90 font-light text-balance"
           >
-            {chapter.body}https://i.ibb.co.com/gM7T1mJ6/IMG-20260714-214135-142.png
+            {chapter.body}https://i.ibb.co.com/MxYC442N/image.png
           </motion.p>
 
           {/* Interactive Console / Code Footer */}

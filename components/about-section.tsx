@@ -46,9 +46,9 @@ export function AboutSection() {
           </h2>
 
           {/* Core Story Content */}
-          <p className="mt-6 max-w-xl text-sm sm:text-base text-muted-foreground/90 leading-relaxed font-light text-balance">
+          {/* <p className="mt-6 max-w-xl text-sm sm:text-base text-muted-foreground/90 leading-relaxed font-light text-balance">
             It began with curiosity and a single line of HTML. I was mesmerized — a few characters in a text file could become something alive in a browser. That spark never faded. I'd sneak in hours after class, building websites, breaking things, and rebuilding them better. Each error was a lesson. Each small win, a revelation.
-          </p>
+          </p> */}
 
           <p className="mt-4 max-w-xl text-sm sm:text-base text-muted-foreground/80 leading-relaxed font-light">
             Today, I focus on crafting pixel-perfect frontend experiences. Balancing aesthetics with performance, I turn complex wireframes into clean, interactive, and production-ready applications.
@@ -57,7 +57,7 @@ export function AboutSection() {
           {/* Code Execution Footer (As seen in your screenshot) */}
           <div className="mt-8 flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.01] px-4 py-2 font-mono text-xs text-muted-foreground/60 shadow-inner">
             <Terminal className="h-3.5 w-3.5 text-cyan-500/70" />
-            <span>~ console.log("hello, world")</span>
+            <span>~ console.log(Hello,World)</span>
           </div>
         </motion.div>
 
@@ -91,7 +91,7 @@ export function AboutSection() {
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
               
               <Image
-                src="https://i.ibb.co.com/KccKQ324/Whats-App-Image-2025-12-08-at-6-03-13-PM-removebg-preview.png"
+                src="https://i.ibb.co.com/gM7T1mJ6/IMG-20260714-214135-142.png"
                 alt="Imran Al Farabi"
                 fill
                 sizes="(max-width: 640px) 240px, 340px"

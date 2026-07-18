@@ -79,7 +79,7 @@ export function LoadingSequence({ onComplete }: { onComplete: () => void }) {
                 {/* আপনার দেওয়া ইমেজ লিংকটি এখানে সুন্দরভাবে রাউন্ডেড ফ্রেমে সেট করা হয়েছে */}
                 <div className="h-full w-full overflow-hidden rounded-full border border-white/5 bg-muted">
                   <img 
-                    src="https://i.ibb.co.com/nswBKZ7Q/my.jpg" 
+                    src="https://i.ibb.co.com/gM7T1mJ6/IMG-20260714-214135-142.png" 
                     alt="Imran Al Farabi" 
                     className="h-full w-full object-cover brightness-105"
                   />

@@ -24,17 +24,9 @@ type Chapter = {
 };
 
 const CHAPTERS: Chapter[] = [
+
   {
-    num: 2,
-    icon: Code2,
-    title: 'How I Started Programming',
-    subtitle: 'The first keystroke',
-    body: "It began with curiosity and a single line of HTML. I was mesmerized — a few characters in a text file could become something alive in a browser. That spark never faded. I'd sneak in hours after class, building crude websites, breaking things, and rebuilding them better. Each error was a lesson. Each small win, a revelation.",
-    highlight: 'console.log("hello, world")',
-    accent: 'from-cyan-500/10 via-transparent to-blue-500/5',
-  },
-  {
-    num: 3,
+    num: 1,
     icon: GraduationCap,
     title: 'My Learning Journey',
     subtitle: 'From tutorials to architecture',
@@ -43,7 +35,7 @@ const CHAPTERS: Chapter[] = [
     accent: 'from-emerald-500/10 via-transparent to-teal-500/5',
   },
   {
-    num: 4,
+    num: 2,
     icon: Rocket,
     title: 'Building Real Products',
     subtitle: 'Shipping to real users',
@@ -52,7 +44,7 @@ const CHAPTERS: Chapter[] = [
     accent: 'from-amber-500/10 via-transparent to-orange-500/5',
   },
   {
-    num: 5,
+    num: 3,
     icon: BrainCircuit,
     title: 'AI Engineering',
     subtitle: 'Teaching machines to think',
@@ -61,7 +53,7 @@ const CHAPTERS: Chapter[] = [
     accent: 'from-violet-500/10 via-transparent to-fuchsia-500/5',
   },
   {
-    num: 6,
+    num: 4,
     icon: Telescope,
     title: 'Future Vision',
     subtitle: 'What comes next',
@@ -149,7 +141,7 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="mt-6 text-sm sm:text-base leading-relaxed text-muted-foreground/90 font-light text-balance"
           >
-            {chapter.body}
+            {chapter.body}https://i.ibb.co.com/gM7T1mJ6/IMG-20260714-214135-142.png
           </motion.p>
 
           {/* Interactive Console / Code Footer */}
@@ -190,7 +182,7 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
                 {/* Bottom shadow fade to merge seamlessly */}
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
                 <Image
-                  src="https://i.ibb.co.com/KccKQ324/Whats-App-Image-2025-12-08-at-6-03-13-PM-removebg-preview.png"
+                  src="https://i.ibb.co.com/gM7T1mJ6/IMG-20260714-214135-142.png"
                   alt="Imran Al Farabi"
                   fill
                   sizes="(max-width: 640px) 200px, 300px"

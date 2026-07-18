@@ -29,10 +29,8 @@ export function AboutSection() {
             <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/5 bg-white/[0.02] text-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.05)]">
               <Code2 className="h-5 w-5" />
             </div>
-            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500 font-mono text-[10px] font-bold text-black shadow-md">
-              1
-            </span>
-          </div>
+          
+         </div>
 
           {/* Chapter Subtitle */}
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-400/80 font-medium">

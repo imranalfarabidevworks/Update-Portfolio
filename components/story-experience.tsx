@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import {
   Code2,
@@ -24,7 +23,6 @@ type Chapter = {
 };
 
 const CHAPTERS: Chapter[] = [
-
   {
     num: 1,
     icon: GraduationCap,
@@ -81,7 +79,6 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
       ref={ref}
       className="relative flex min-h-screen items-center justify-center py-24 overflow-hidden"
     >
-      {/* Background soft lighting gradient */}
       <div
         className={`pointer-events-none absolute inset-0 bg-gradient-to-b ${chapter.accent} opacity-30`}
       />
@@ -92,9 +89,8 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
           isReversed ? 'lg:[direction:rtl]' : ''
         }`}
       >
-        {/* ---------------- Left/Content Side ---------------- */}
+        {/* Content Side */}
         <motion.div style={{ y }} className={`[direction:ltr] ${isReversed ? 'lg:order-2' : ''}`}>
-          {/* Chapter Number Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -111,7 +107,6 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
             </span>
           </motion.div>
 
-          {/* Subtitle / Chapter Meta */}
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -122,7 +117,6 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
             Chapter {chapter.num.toString().padStart(2, '0')} · {chapter.subtitle}
           </motion.p>
 
-          {/* Title */}
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +127,6 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
             {chapter.title}
           </motion.h2>
 
-          {/* Body Description */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,10 +134,9 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
             transition={{ delay: 0.1, duration: 0.6 }}
             className="mt-6 text-sm sm:text-base leading-relaxed text-muted-foreground/90 font-light text-balance"
           >
-            {chapter.body}https://i.ibb.co.com/MxYC442N/image.png
+            {chapter.body}
           </motion.p>
 
-          {/* Interactive Console / Code Footer */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -157,7 +149,7 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
           </motion.div>
         </motion.div>
 
-        {/* ---------------- Right/Visual Side (Elegant Picture Orbit) ---------------- */}
+        {/* Visual Side */}
         <motion.div
           initial={{ opacity: 0, x: isReversed ? -40 : 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -165,42 +157,21 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className={`relative flex justify-center [direction:ltr] ${isReversed ? 'lg:order-1 lg:justify-start' : 'lg:justify-end'}`}
         >
-          {/* Main Visual Node Outer Circles */}
           <div className="relative h-72 w-72 sm:h-80 sm:w-80 md:h-[24rem] md:w-[24rem] lg:h-[26rem] lg:w-[26rem]">
-            {/* Double Circle Radar Rings */}
             <div className="absolute inset-0 rounded-full border border-white/[0.015]" />
             <div className="absolute inset-6 rounded-full border border-white/[0.025]" />
             <div className="absolute inset-12 rounded-full border border-white/[0.035]" />
             <div className="absolute inset-20 rounded-full border border-white/[0.05]" />
-
-            {/* Pulsing Core Glow */}
             <div className="absolute inset-24 rounded-full bg-cyan-500/5 blur-3xl" />
 
-            {/* Only display the Picture inside Chapter 2 frame */}
-            {chapter.num === 2 ? (
-              <div className="absolute inset-14 overflow-hidden rounded-full border border-white/10 bg-gradient-to-b from-white/[0.03] to-white/[0.01] backdrop-blur-[8px] shadow-[0_20px_50px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.05)]">
-                {/* Bottom shadow fade to merge seamlessly */}
-                <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
-                <Image
-                  src="https://i.ibb.co.com/gM7T1mJ6/IMG-20260714-214135-142.png"
-                  alt="Imran Al Farabi"
-                  fill
-                  sizes="(max-width: 640px) 200px, 300px"
-                  className="object-cover scale-105 translate-y-3 mix-blend-screen brightness-110 contrast-105 transition-transform duration-500 hover:scale-110"
-                  priority
-                />
+            {/* Reverted to icon-only design */}
+            <div className="absolute inset-14 flex items-center justify-center rounded-full border border-white/5 bg-white/[0.01] backdrop-blur-sm shadow-xl">
+              <div className="relative h-24 w-24">
+                <chapter.icon className="h-full w-full text-cyan-400/20" strokeWidth={0.5} />
+                <div className="absolute inset-0 animate-pulse rounded-full bg-cyan-500/5 blur-xl" />
               </div>
-            ) : (
-              /* Other Chapters fall back to clean minimalistic vector icon wireframe */
-              <div className="absolute inset-14 flex items-center justify-center rounded-full border border-white/5 bg-white/[0.01] backdrop-blur-sm shadow-xl">
-                <div className="relative h-24 w-24">
-                  <chapter.icon className="h-full w-full text-cyan-400/20" strokeWidth={0.5} />
-                  <div className="absolute inset-0 animate-pulse rounded-full bg-cyan-500/5 blur-xl" />
-                </div>
-              </div>
-            )}
+            </div>
 
-            {/* Small Rotating/Floating Indicator Orbit Dots */}
             {[0, 120, 240].map((angle, i) => (
               <div
                 key={angle}
@@ -227,7 +198,6 @@ function ChapterCard({ chapter, index }: { chapter: Chapter; index: number }) {
 export function StoryExperience() {
   return (
     <section id="story" className="relative bg-background">
-      {/* Chapter Section Title Group */}
       <div className="relative mx-auto max-w-7xl px-4 pt-32 pb-12 text-center sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -248,7 +218,6 @@ export function StoryExperience() {
         </motion.div>
       </div>
 
-      {/* Chapters Mapping Render list */}
       <div className="relative z-10">
         {CHAPTERS.map((chapter, i) => (
           <ChapterCard key={chapter.num} chapter={chapter} index={i} />
